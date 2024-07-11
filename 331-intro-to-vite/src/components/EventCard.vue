@@ -1,11 +1,26 @@
 <script setup lang="ts">
-// defineProps<{
-//   msg: string
-// }>()
+import { ref } from 'vue';
+
+const event = ref({
+  id: 5928101,
+  category: 'animal welfare',
+  title: 'Cat Adaption Day',
+  description: 'Find your new feline friend at this event.',
+  location: 'Meow Town',
+  date: 'January 8, 2022',
+  time: '12:00',
+  petAllowed: true,
+  organizer: 'Kat laydee'
+})
 </script>
 
 <template>
-  <div class="event-class"></div>
+  <div class="event-class">
+    <div class="event-card">
+      <h2>{{ event.title }}</h2>
+      <span>@{{ event.time }} on {{ event.date }}</span>
+    </div>
+  </div>
 </template>
 
 <style scoped>
